@@ -33,16 +33,14 @@ export default class App extends Component {
 
   onClickChangeBackground() {
     const random = Math.floor(Math.random() * this.state.strlist.length);
+    console.log('clicked!')
     this.setState({parameter: this.state.strlist[random]});
   }
 
   render() {
     return (
       <View
-        style={[
-          styles.container,
-          this.state.bgfy
-        ]}
+        style={styles.container}
       >
         <Text
           style={styles.textify}
@@ -76,10 +74,5 @@ const styles = StyleSheet.create({
     color: 'black',
     margin: 20,
     fontFamily: Platform.OS == 'android' ? 'cursive' : 'helvetica',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
